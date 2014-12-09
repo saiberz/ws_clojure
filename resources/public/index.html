@@ -358,7 +358,7 @@ http://www.templatemo.com/preview/templatemo_401_sprint
     <script src="js/main.js"></script>
 
     <script>
-     var socket = new WebSocket("ws://localhost:8090/ws");
+     var socket = new WebSocket("ws://localhost:8080/ws");
      socket.onmessage = function (e){       
        $("#chatbox").append("<p>"+e.data+"</p>")
        console.log(e.data);
