@@ -6,6 +6,7 @@
             [ring.util.response :refer [redirect]]
             [compojure.route :as route]
             [compojure.handler :as handler]
+            [gniazdo.core :as ws]
             )
   (:gen-class :main true))
 
@@ -24,8 +25,13 @@
     (swap! clients assoc con {:name "guest"})
     (http-kit/on-receive con (fn [data]
                                         ;                               (println "Data received: " )
+                               (println "Data:" data)
                                (doseq [client @clients]
-                                 (http-kit/send! (key client) (str data) false))))
+                                 (http-kit/send! (key client)
+                                                 {:status 200
+                                                  :headers {"Content-Type" "application/json; charset=utf-8"}
+                                                  :body data}
+                                                 false))))
     (http-kit/on-close con (fn [status]
                              (doseq [client @clients]
                                (http-kit/send! (key client) (str "Server closed:" con) false))
@@ -36,7 +42,7 @@
 (defroutes routes
   (GET "/ws" [] ws)
   (GET "/chat" [] (redirect "/index.html"))
-  (GET "/" [] "index")
+  (GET "/" [] (redirect "/index.html"))
   (route/resources "/"))
 
 (def app (-> (handler/site routes)
@@ -44,5 +50,7 @@
 
 (defn -main [& args]
 ;  (stop-server)
-  (reset! server (http-kit/run-server app {:port 8080 :join? false}))
+  (reset! server (http-kit/run-server app {:port 8090 :join? false}))
 )
+
+(-main)

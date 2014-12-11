@@ -7,6 +7,7 @@
                  [http-kit "2.1.19"]
                  [ring "1.3.2"]
                  [compojure "1.3.0"]
+                 [stylefruits/gniazdo "0.3.0"] ; client
                  [ring-cors "0.1.4"]]
   :main ^:skip-aot wsclj.core
   :profiles {:uberjar {:aot :all}})
