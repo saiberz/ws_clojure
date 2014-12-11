@@ -50,7 +50,7 @@
 
 (defn -main [& args]
 ;  (stop-server)
-  (reset! server (http-kit/run-server app {:port 8090 :join? false}))
+  (reset! server (http-kit/run-server app {:port 8080 :join? false}))
 )
 
 (-main)

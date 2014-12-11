@@ -43,8 +43,8 @@ http://www.templatemo.com/preview/templatemo_401_sprint
             <a href="#" class="toggle-menu"><i class="fa fa-bars"></i></a>
             <div class="main-menu">
               <ul>
-                <li><a href="#front">Home</a></li>
-                <li><a href="#services">Services</a></li>                
+                <li><a href="#front">Users</a></li>
+                <li><a href="#services">Chat</a></li>                
               </ul>
             </div> <!-- /.main-menu -->
           </div> <!-- /.col-md-8 -->
@@ -65,37 +65,19 @@ http://www.templatemo.com/preview/templatemo_401_sprint
     </div> <!-- /.site-header -->
   </div> <!-- /#front -->
 
+  
 
   <div class="site-slider">
-    <!-- /.bxslider -->
-    <table class="table">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Name</th>
-          <th>Country</th>
-          <th>Speak</th>
-          <th>Learn</th>            
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th>A</th>
-          <th>B</th>
-          <th>C</th>
-          <th>D</th>
-          <th>E</th>
-        </tr>
-      </tbody>
-    </table>
-    
+    <!-- /.bxslider -->          
     
   </div>
   <!-- /.site-slider -->
 
+  <div id="demo"></div>
+
   <div id="services" class="content-section">
     <div class="container">
-      <div style="border:solid; height:400px">
+      <div style="border:solid; height:200px">
         <div id="chatbox">
           <p> 
             <span>
@@ -140,28 +122,15 @@ http://www.templatemo.com/preview/templatemo_401_sprint
   </div> <!-- /.site-footer -->
 
   
+
+  
   <script src="js/vendor/jquery-1.10.1.min.js"></script>
-  <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
-  <script src="js/jquery.easing-1.3.js"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>  
   <script src="js/bootstrap.js"></script>
   <script src="js/plugins.js"></script>
-  <script src="js/main.js"></script>
-
-    <script>
-     var socket = new WebSocket("ws://localhost:8080/ws");
-     socket.onmessage = function (e){       
-       $("#chatbox").append("<p>"+e.data+"</p>")
-       console.log(e.data);
-       
-     }
-     $("#send").click(function(){       
-       message = $("#message").val();
-       socket.send(message);
-       $("#message").val("");
-       console.log("Message sent" + message);
-       console.log("----");       
-     })       
-    </script>
+  
+  <script src="http://fb.me/react-0.11.1.js"></script>  
+  <script src="js/demo.js"></script>      
     <!-- templatemo 401 sprint -->
 </body>
 </html>
