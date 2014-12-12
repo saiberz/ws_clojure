@@ -32896,165 +32896,98 @@ goog.require("om.core");
 goog.require("om.core");
 cljs.core.enable_console_print_BANG_.call(null);
 console.log("hi cljs");
-cljs.demo.app_state = cljs.core.atom.call(null, new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "list", "list", 765357683), new cljs.core.PersistentVector(null, 5, 5, cljs.core.PersistentVector.EMPTY_NODE, ["Lion", "Zebra", "Buffalo", "Antelope", "Other"], null)], null));
 cljs.demo.stripe = function stripe(text, bgc) {
   var st = {"backgroundColor":bgc};
   return React.DOM.li({"style":st}, text);
 };
-cljs.demo.app_test = cljs.core.atom.call(null, new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "users", "users", -713552705), new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, ["user1"], null)], null));
-cljs.demo.app_state = cljs.core.atom.call(null, new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "users", "users", -713552705), new cljs.core.PersistentVector(null, 6, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null, "first", "first", -644103046), "Ben", new cljs.core.Keyword(null, "last", "last", 1105735132), "Bitdiddle", new cljs.core.Keyword(null, "email", "email", 1415816706), "benb@mit.edu"], null), new cljs.core.PersistentArrayMap(null, 
-4, [new cljs.core.Keyword(null, "first", "first", -644103046), "Alyssa", new cljs.core.Keyword(null, "middle-initial", "middle-initial", 854677765), "P", new cljs.core.Keyword(null, "last", "last", 1105735132), "Hacker", new cljs.core.Keyword(null, "email", "email", 1415816706), "aphacker@mit.edu"], null), new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null, "first", "first", -644103046), "Eva", new cljs.core.Keyword(null, "middle", "middle", -701029031), "Lu", new cljs.core.Keyword(null, 
-"last", "last", 1105735132), "Ator", new cljs.core.Keyword(null, "email", "email", 1415816706), "eval@mit.edu"], null), new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null, "first", "first", -644103046), "Louis", new cljs.core.Keyword(null, "last", "last", 1105735132), "Reasoner", new cljs.core.Keyword(null, "email", "email", 1415816706), "prolog@mit.edu"], null), new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null, "first", "first", -644103046), "Cy", new cljs.core.Keyword(null, 
-"middle-initial", "middle-initial", 854677765), "D", new cljs.core.Keyword(null, "last", "last", 1105735132), "Effect", new cljs.core.Keyword(null, "email", "email", 1415816706), "bugs@mit.edu"], null), new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null, "first", "first", -644103046), "Lem", new cljs.core.Keyword(null, "middle-initial", "middle-initial", 854677765), "E", new cljs.core.Keyword(null, "last", "last", 1105735132), "Tweakit", new cljs.core.Keyword(null, "email", "email", 
-1415816706), "morebugs@mit.edu"], null)], null)], null));
-cljs.demo.middle_name = function middle_name(p__9328) {
-  var map__9330 = p__9328;
-  var map__9330__$1 = cljs.core.seq_QMARK_.call(null, map__9330) ? cljs.core.apply.call(null, cljs.core.hash_map, map__9330) : map__9330;
-  var middle_initial = cljs.core.get.call(null, map__9330__$1, new cljs.core.Keyword(null, "middle-initial", "middle-initial", 854677765));
-  var middle = cljs.core.get.call(null, map__9330__$1, new cljs.core.Keyword(null, "middle", "middle", -701029031));
-  if (cljs.core.truth_(middle)) {
-    return[cljs.core.str(" "), cljs.core.str(middle)].join("");
-  } else {
-    if (cljs.core.truth_(middle_initial)) {
-      return[cljs.core.str(" "), cljs.core.str(middle_initial), cljs.core.str(".")].join("");
-    } else {
-      return null;
-    }
-  }
-};
-cljs.demo.display_name = function display_name(p__9331) {
-  var map__9333 = p__9331;
-  var map__9333__$1 = cljs.core.seq_QMARK_.call(null, map__9333) ? cljs.core.apply.call(null, cljs.core.hash_map, map__9333) : map__9333;
-  var contact = map__9333__$1;
-  var last = cljs.core.get.call(null, map__9333__$1, new cljs.core.Keyword(null, "last", "last", 1105735132));
-  var first = cljs.core.get.call(null, map__9333__$1, new cljs.core.Keyword(null, "first", "first", -644103046));
-  return[cljs.core.str(last), cljs.core.str(", "), cljs.core.str(first), cljs.core.str(cljs.demo.middle_name.call(null, contact))].join("");
-};
-cljs.demo.display_user = function display_user(p__9334) {
-  var map__9336 = p__9334;
-  var map__9336__$1 = cljs.core.seq_QMARK_.call(null, map__9336) ? cljs.core.apply.call(null, cljs.core.hash_map, map__9336) : map__9336;
-  var first = cljs.core.get.call(null, map__9336__$1, new cljs.core.Keyword(null, "first", "first", -644103046));
-  return[cljs.core.str("-\x3e"), cljs.core.str(first)].join("");
-};
-cljs.demo.contact_view = function contact_view(contact, owner) {
-  if (typeof cljs.demo.t9340 !== "undefined") {
-  } else {
-    cljs.demo.t9340 = function(owner, contact, contact_view, meta9341) {
-      this.owner = owner;
-      this.contact = contact;
-      this.contact_view = contact_view;
-      this.meta9341 = meta9341;
-      this.cljs$lang$protocol_mask$partition1$ = 0;
-      this.cljs$lang$protocol_mask$partition0$ = 393216;
-    };
-    cljs.demo.t9340.prototype.om$core$IRender$ = true;
-    cljs.demo.t9340.prototype.om$core$IRender$render$arity$1 = function(this$) {
-      var self__ = this;
-      var this$__$1 = this;
-      return React.DOM.li(null, cljs.demo.display_name.call(null, self__.contact));
-    };
-    cljs.demo.t9340.prototype.cljs$core$IMeta$_meta$arity$1 = function(_9342) {
-      var self__ = this;
-      var _9342__$1 = this;
-      return self__.meta9341;
-    };
-    cljs.demo.t9340.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(_9342, meta9341__$1) {
-      var self__ = this;
-      var _9342__$1 = this;
-      return new cljs.demo.t9340(self__.owner, self__.contact, self__.contact_view, meta9341__$1);
-    };
-    cljs.demo.t9340.cljs$lang$type = true;
-    cljs.demo.t9340.cljs$lang$ctorStr = "cljs.demo/t9340";
-    cljs.demo.t9340.cljs$lang$ctorPrWriter = function(this__4190__auto__, writer__4191__auto__, opt__4192__auto__) {
-      return cljs.core._write.call(null, writer__4191__auto__, "cljs.demo/t9340");
-    };
-    cljs.demo.__GT_t9340 = function __GT_t9340(owner__$1, contact__$1, contact_view__$1, meta9341) {
-      return new cljs.demo.t9340(owner__$1, contact__$1, contact_view__$1, meta9341);
-    };
-  }
-  return new cljs.demo.t9340(owner, contact, contact_view, new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null, "end-column", "end-column", 1425389514), 44, new cljs.core.Keyword(null, "end-line", "end-line", 1837326455), 57, new cljs.core.Keyword(null, "column", "column", 2078222095), 3, new cljs.core.Keyword(null, "line", "line", 212345235), 54, new cljs.core.Keyword(null, "file", "file", -1269645878), "/home/saiberz/projects/wsclj/src/cljs/demo.cljs"], null));
-};
+cljs.demo.app_data = cljs.core.atom.call(null, new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "users", "users", -713552705), new cljs.core.PersistentVector(null, 6, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null, "name", "name", 1843675177), "Ben", new cljs.core.Keyword(null, "country", "country", 312965309), "Bangladesh", new cljs.core.Keyword(null, "email", "email", 1415816706), "benb@mit.edu"], null), new cljs.core.PersistentArrayMap(null, 
+3, [new cljs.core.Keyword(null, "name", "name", 1843675177), "Alyssa", new cljs.core.Keyword(null, "country", "country", 312965309), "Bulgary", new cljs.core.Keyword(null, "email", "email", 1415816706), "aphacker@mit.edu"], null), new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null, "name", "name", 1843675177), "Eva", new cljs.core.Keyword(null, "country", "country", 312965309), "Germany", new cljs.core.Keyword(null, "email", "email", 1415816706), "eval@mit.edu"], null), new cljs.core.PersistentArrayMap(null, 
+3, [new cljs.core.Keyword(null, "name", "name", 1843675177), "Louis", new cljs.core.Keyword(null, "country", "country", 312965309), "Brazil", new cljs.core.Keyword(null, "email", "email", 1415816706), "prolog@mit.edu"], null), new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null, "name", "name", 1843675177), "Cy", new cljs.core.Keyword(null, "country", "country", 312965309), "China", new cljs.core.Keyword(null, "email", "email", 1415816706), "bugs@mit.edu"], null), new cljs.core.PersistentArrayMap(null, 
+3, [new cljs.core.Keyword(null, "name", "name", 1843675177), "Lem", new cljs.core.Keyword(null, "country", "country", 312965309), "Switzerland", new cljs.core.Keyword(null, "email", "email", 1415816706), "morebugs@mit.edu"], null)], null)], null));
 cljs.demo.users_view = function users_view(user, xx) {
-  if (typeof cljs.demo.t9346 !== "undefined") {
+  if (typeof cljs.demo.t9812 !== "undefined") {
   } else {
-    cljs.demo.t9346 = function(xx, user, users_view, meta9347) {
+    cljs.demo.t9812 = function(xx, user, users_view, meta9813) {
       this.xx = xx;
       this.user = user;
       this.users_view = users_view;
-      this.meta9347 = meta9347;
+      this.meta9813 = meta9813;
       this.cljs$lang$protocol_mask$partition1$ = 0;
       this.cljs$lang$protocol_mask$partition0$ = 393216;
     };
-    cljs.demo.t9346.prototype.om$core$IRender$ = true;
-    cljs.demo.t9346.prototype.om$core$IRender$render$arity$1 = function(this$) {
+    cljs.demo.t9812.prototype.om$core$IRender$ = true;
+    cljs.demo.t9812.prototype.om$core$IRender$render$arity$1 = function(this$) {
       var self__ = this;
       var this$__$1 = this;
-      return React.DOM.tr(null, React.DOM.td(null, (new cljs.core.Keyword(null, "first", "first", -644103046)).cljs$core$IFn$_invoke$arity$1(self__.user)), React.DOM.td(null, (new cljs.core.Keyword(null, "last", "last", 1105735132)).cljs$core$IFn$_invoke$arity$1(self__.user)), React.DOM.td(null, (new cljs.core.Keyword(null, "email", "email", 1415816706)).cljs$core$IFn$_invoke$arity$1(self__.user)));
+      return React.DOM.tr(null, React.DOM.td(null, (new cljs.core.Keyword(null, "name", "name", 1843675177)).cljs$core$IFn$_invoke$arity$1(self__.user)), React.DOM.td(null, (new cljs.core.Keyword(null, "country", "country", 312965309)).cljs$core$IFn$_invoke$arity$1(self__.user)), React.DOM.td(null, (new cljs.core.Keyword(null, "email", "email", 1415816706)).cljs$core$IFn$_invoke$arity$1(self__.user)));
     };
-    cljs.demo.t9346.prototype.cljs$core$IMeta$_meta$arity$1 = function(_9348) {
+    cljs.demo.t9812.prototype.cljs$core$IMeta$_meta$arity$1 = function(_9814) {
       var self__ = this;
-      var _9348__$1 = this;
-      return self__.meta9347;
+      var _9814__$1 = this;
+      return self__.meta9813;
     };
-    cljs.demo.t9346.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(_9348, meta9347__$1) {
+    cljs.demo.t9812.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(_9814, meta9813__$1) {
       var self__ = this;
-      var _9348__$1 = this;
-      return new cljs.demo.t9346(self__.xx, self__.user, self__.users_view, meta9347__$1);
+      var _9814__$1 = this;
+      return new cljs.demo.t9812(self__.xx, self__.user, self__.users_view, meta9813__$1);
     };
-    cljs.demo.t9346.cljs$lang$type = true;
-    cljs.demo.t9346.cljs$lang$ctorStr = "cljs.demo/t9346";
-    cljs.demo.t9346.cljs$lang$ctorPrWriter = function(this__4190__auto__, writer__4191__auto__, opt__4192__auto__) {
-      return cljs.core._write.call(null, writer__4191__auto__, "cljs.demo/t9346");
+    cljs.demo.t9812.cljs$lang$type = true;
+    cljs.demo.t9812.cljs$lang$ctorStr = "cljs.demo/t9812";
+    cljs.demo.t9812.cljs$lang$ctorPrWriter = function(this__4190__auto__, writer__4191__auto__, opt__4192__auto__) {
+      return cljs.core._write.call(null, writer__4191__auto__, "cljs.demo/t9812");
     };
-    cljs.demo.__GT_t9346 = function __GT_t9346(xx__$1, user__$1, users_view__$1, meta9347) {
-      return new cljs.demo.t9346(xx__$1, user__$1, users_view__$1, meta9347);
+    cljs.demo.__GT_t9812 = function __GT_t9812(xx__$1, user__$1, users_view__$1, meta9813) {
+      return new cljs.demo.t9812(xx__$1, user__$1, users_view__$1, meta9813);
     };
   }
-  return new cljs.demo.t9346(xx, user, users_view, new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null, "end-column", "end-column", 1425389514), 44, new cljs.core.Keyword(null, "end-line", "end-line", 1837326455), 66, new cljs.core.Keyword(null, "column", "column", 2078222095), 3, new cljs.core.Keyword(null, "line", "line", 212345235), 60, new cljs.core.Keyword(null, "file", "file", -1269645878), "/home/saiberz/projects/wsclj/src/cljs/demo.cljs"], null));
+  return new cljs.demo.t9812(xx, user, users_view, new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null, "end-column", "end-column", 1425389514), 44, new cljs.core.Keyword(null, "end-line", "end-line", 1837326455), 40, new cljs.core.Keyword(null, "column", "column", 2078222095), 3, new cljs.core.Keyword(null, "line", "line", 212345235), 34, new cljs.core.Keyword(null, "file", "file", -1269645878), "/home/saiberz/projects/wsclj/src/cljs/demo.cljs"], null));
 };
 cljs.demo.appfunction = function appfunction(data, xx) {
-  if (typeof cljs.demo.t9352 !== "undefined") {
+  if (typeof cljs.demo.t9818 !== "undefined") {
   } else {
-    cljs.demo.t9352 = function(xx, data, appfunction, meta9353) {
+    cljs.demo.t9818 = function(xx, data, appfunction, meta9819) {
       this.xx = xx;
       this.data = data;
       this.appfunction = appfunction;
-      this.meta9353 = meta9353;
+      this.meta9819 = meta9819;
       this.cljs$lang$protocol_mask$partition1$ = 0;
       this.cljs$lang$protocol_mask$partition0$ = 393216;
     };
-    cljs.demo.t9352.prototype.om$core$IRender$ = true;
-    cljs.demo.t9352.prototype.om$core$IRender$render$arity$1 = function(this$) {
+    cljs.demo.t9818.prototype.om$core$IRender$ = true;
+    cljs.demo.t9818.prototype.om$core$IRender$render$arity$1 = function(this$) {
       var self__ = this;
       var this$__$1 = this;
       return React.DOM.div({"className":"div1"}, React.DOM.table({"className":"table"}, cljs.core.apply.call(null, om.dom.tbody, null, om.core.build_all.call(null, cljs.demo.users_view, (new cljs.core.Keyword(null, "users", "users", -713552705)).cljs$core$IFn$_invoke$arity$1(self__.data)))));
     };
-    cljs.demo.t9352.prototype.cljs$core$IMeta$_meta$arity$1 = function(_9354) {
+    cljs.demo.t9818.prototype.cljs$core$IMeta$_meta$arity$1 = function(_9820) {
       var self__ = this;
-      var _9354__$1 = this;
-      return self__.meta9353;
+      var _9820__$1 = this;
+      return self__.meta9819;
     };
-    cljs.demo.t9352.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(_9354, meta9353__$1) {
+    cljs.demo.t9818.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(_9820, meta9819__$1) {
       var self__ = this;
-      var _9354__$1 = this;
-      return new cljs.demo.t9352(self__.xx, self__.data, self__.appfunction, meta9353__$1);
+      var _9820__$1 = this;
+      return new cljs.demo.t9818(self__.xx, self__.data, self__.appfunction, meta9819__$1);
     };
-    cljs.demo.t9352.cljs$lang$type = true;
-    cljs.demo.t9352.cljs$lang$ctorStr = "cljs.demo/t9352";
-    cljs.demo.t9352.cljs$lang$ctorPrWriter = function(this__4190__auto__, writer__4191__auto__, opt__4192__auto__) {
-      return cljs.core._write.call(null, writer__4191__auto__, "cljs.demo/t9352");
+    cljs.demo.t9818.cljs$lang$type = true;
+    cljs.demo.t9818.cljs$lang$ctorStr = "cljs.demo/t9818";
+    cljs.demo.t9818.cljs$lang$ctorPrWriter = function(this__4190__auto__, writer__4191__auto__, opt__4192__auto__) {
+      return cljs.core._write.call(null, writer__4191__auto__, "cljs.demo/t9818");
     };
-    cljs.demo.__GT_t9352 = function __GT_t9352(xx__$1, data__$1, appfunction__$1, meta9353) {
-      return new cljs.demo.t9352(xx__$1, data__$1, appfunction__$1, meta9353);
+    cljs.demo.__GT_t9818 = function __GT_t9818(xx__$1, data__$1, appfunction__$1, meta9819) {
+      return new cljs.demo.t9818(xx__$1, data__$1, appfunction__$1, meta9819);
     };
   }
-  return new cljs.demo.t9352(xx, data, appfunction, new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null, "end-column", "end-column", 1425389514), 78, new cljs.core.Keyword(null, "end-line", "end-line", 1837326455), 75, new cljs.core.Keyword(null, "column", "column", 2078222095), 3, new cljs.core.Keyword(null, "line", "line", 212345235), 69, new cljs.core.Keyword(null, "file", "file", -1269645878), "/home/saiberz/projects/wsclj/src/cljs/demo.cljs"], null));
+  return new cljs.demo.t9818(xx, data, appfunction, new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null, "end-column", "end-column", 1425389514), 78, new cljs.core.Keyword(null, "end-line", "end-line", 1837326455), 49, new cljs.core.Keyword(null, "column", "column", 2078222095), 3, new cljs.core.Keyword(null, "line", "line", 212345235), 43, new cljs.core.Keyword(null, "file", "file", -1269645878), "/home/saiberz/projects/wsclj/src/cljs/demo.cljs"], null));
 };
-om.core.root.call(null, cljs.demo.appfunction, cljs.demo.app_state, new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "target", "target", 253001721), document.getElementById("demo")], null));
+om.core.root.call(null, cljs.demo.appfunction, cljs.demo.app_data, new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "target", "target", 253001721), document.getElementById("demo")], null));
 cljs.demo.add_message = function add_message(x) {
   return console.log(x.data);
 };
 cljs.demo.socket = new WebSocket("ws://localhost:8080/ws");
+cljs.demo.socket.onopen = function(x) {
+  return cljs.demo.socket.send("New User Connected");
+};
 cljs.demo.socket.onmessage = cljs.demo.add_message;
 cljs.demo.send_to_server = function send_to_server() {
   var m = $.trim($("#message").val());

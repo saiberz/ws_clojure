@@ -24,14 +24,14 @@
   (http-kit/with-channel req con
     (swap! clients assoc con {:name "guest"})
     (http-kit/on-receive con (fn [data]
-                                        ;                               (println "Data received: " )
-                               (println "Data:" data)
                                (doseq [client @clients]
                                  (http-kit/send! (key client)
                                                  {:status 200
                                                   :headers {"Content-Type" "application/json; charset=utf-8"}
-                                                  :body data}
-                                                 false))))
+                                                  :body (cond
+                                                         (= data "new") "New User"
+                                                         :else data)}
+                                                         false))))
     (http-kit/on-close con (fn [status]
                              (doseq [client @clients]
                                (http-kit/send! (key client) (str "Server closed:" con) false))
