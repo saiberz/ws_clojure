@@ -53,4 +53,4 @@
   (reset! server (http-kit/run-server app {:port 8080 :join? false}))
 )
 
-(-main)
+;(-main)

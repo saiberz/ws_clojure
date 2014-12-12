@@ -60,7 +60,7 @@
 
 (set! (.-onopen socket)
       (fn [x]
-        (.send socket "New User Connected")))
+        (.send socket "new")))
 
 (set! (.-onmessage socket) add-message)
 
